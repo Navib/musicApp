@@ -1,11 +1,33 @@
+@lost flexbox flex;
+
 .search-results {
-  lost-column: 9/12;
-  lost-offset: 2/12;
   overflow: scroll;
-  height: calc(100vh - 85px);
+  height: calc(100vh - 80px);
 }
-.search-results::-webkit-scrollbar {
-  display: none; // Safari and Chrome
-}
+
 .top-results {
+  width: calc(100%);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: center;
+  .img-result {
+    lost-column: 1/4 0;
+
+    img {
+      width: 200px;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  .top-result-list {
+    lost-column: 2/3 0;
+
+    .result-list-meta {
+      position: relative;
+    }
+  }
 }
