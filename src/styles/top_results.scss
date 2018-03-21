@@ -1,0 +1,11 @@
+.search-results {
+  lost-column: 9/12;
+  lost-offset: 2/12;
+  overflow: scroll;
+  height: calc(100vh - 85px);
+}
+.search-results::-webkit-scrollbar {
+  display: none; // Safari and Chrome
+}
+.top-results {
+}
