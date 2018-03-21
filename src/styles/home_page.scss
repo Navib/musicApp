@@ -25,7 +25,7 @@
     > div:nth-child(1) {
       > div:nth-child(1) {
         > div:nth-child(1) {
-          height: calc(100vh - 70px) !important;
+          height: calc(100vh - 85px) !important;
         }
       }
     }
@@ -36,6 +36,7 @@
     left: 256px;
     width: calc(100% - 256px);
     margin: 0 auto;
+    height: calc(100vh - 85px) !important;
 
     .content-bar {
       lost-center: 980px;
@@ -48,10 +49,17 @@
     right: 0;
     width: 100%;
     z-index: 10;
+    border-top: 1px solid #e6e6e6;
 
     div:nth-child(1) {
+      height: 85px !important;
       div:nth-child(1) {
-        height: 70px !important;
+        height: 100% !important;
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+        align-content: center;
+        align-items: center;
       }
     }
   }

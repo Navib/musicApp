@@ -2,7 +2,7 @@ import React from "react";
 import Drawer from "material-ui/Drawer";
 import MenuItem from "material-ui/MenuItem";
 import RaisedButton from "material-ui/RaisedButton";
-import Search from "./search";
+import Search from "../containers/search";
 
 export default class DrawerDock extends React.Component {
   constructor(props) {
