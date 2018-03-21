@@ -18,7 +18,6 @@ class Search extends Component {
   onFormSubmit(event) {
     event.preventDefault();
     this.props.onSubmit(this.state.term);
-    console.log("form");
     this.setState({
       term: ""
     });

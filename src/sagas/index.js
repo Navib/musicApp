@@ -15,7 +15,6 @@ function* getStuff() {
 }
 
 function* getSearch(term) {
-  console.log("Search Sagas: ", term.payload);
   try {
     const data = yield call(search.getSearch, term.payload);
     yield put({ type: actions.GOT_SEARCH, data });
