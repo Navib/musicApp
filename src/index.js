@@ -14,9 +14,9 @@ import muiTheme from "./theme/index";
 import "./styles/main.scss";
 import "./assets/Rick.png";
 
-import App from "./containers/app";
-import AppB from "./components/app_B";
-import AppC from "./components/app_C";
+import App from "./containers/pages/app";
+import AppB from "./components/pages/app_B";
+import AppC from "./components/pages/app_C";
 
 ReactDOM.render(
   <MuiThemeProvider muiTheme={muiTheme}>

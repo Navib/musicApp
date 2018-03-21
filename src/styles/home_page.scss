@@ -1,0 +1,49 @@
+/*
+ * HomePage Layout Style
+*/
+
+#home-page {
+  position: relative;
+  margin: 0;
+  padding: 0;
+
+  .drawer-dock {
+    lost-column: 1/5 0;
+    position: fixed;
+    left: 0;
+    height: calc(100vh - 70px);
+
+    > div:nth-child(1) {
+      > div:nth-child(1) {
+        > div:nth-child(1) {
+          height: calc(100vh - 70px) !important;
+        }
+      }
+    }
+  }
+
+  .interactive-view {
+    position: fixed;
+    left: 256px;
+    width: calc(100% - 256px);
+    margin: 0 auto;
+
+    .content-bar {
+      lost-center: 980px;
+    }
+  }
+
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+
+    div:nth-child(1) {
+      div:nth-child(1) {
+        height: 70px !important;
+      }
+    }
+  }
+}

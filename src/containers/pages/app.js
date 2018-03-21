@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
-import actions from "../actions/";
+import actions from "../../actions/";
 
-import TheComponent from "../components/app";
+import TheComponent from "../../components/pages/app";
 
 const mapStateToProps = (state, ownProps) => {
   return {

@@ -1,14 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 import RaisedButton from "material-ui/RaisedButton";
-import Menu from "../containers/Menu";
-import GridInline from "../components/grid_inline";
+import DrawerDock from "../../components/drawer_dock";
+import BottomNav from "../../components/bottom_nav";
 
 const App = props => (
-  <div>
-    <Menu />
-    <RaisedButton label={props.buttonText} onClick={props.onClick} />
-    <GridInline />
+  <div id="home-page">
+    <div className="drawer-dock">
+      <DrawerDock />
+    </div>
+    <div className="interactive-view">
+      <div className="content-bar">Content</div>
+    </div>
+    <div className="bottom-nav">
+      <BottomNav />
+    </div>
   </div>
 );
 
