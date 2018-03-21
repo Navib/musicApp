@@ -4,11 +4,16 @@ import actions from "../actions";
 import TheComponent from "../components/search";
 
 const mapStateToProps = (state, OwnProps) => {
+  console.log("search container:", state);
   return {};
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  return dispatch({ type: actions.GET_SEARCH });
+  return {
+    onSubmit: term => {
+      dispatch({ type: actions.GET_SEARCH, payload: term });
+    }
+  };
 };
 
 const Search = connect(mapStateToProps, mapDispatchToProps)(TheComponent);

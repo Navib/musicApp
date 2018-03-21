@@ -14,10 +14,10 @@ function* getStuff() {
   }
 }
 
-function* getSearch() {
-  console.log("Search Init");
+function* getSearch(term) {
+  console.log("Search Sagas: ", term.payload);
   try {
-    const data = yield call(search.getSearch);
+    const data = yield call(search.getSearch, term.payload);
     yield put({ type: actions.GOT_SEARCH, data });
   } catch (error) {
     console.log("saga fail: ", error);

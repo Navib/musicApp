@@ -1,11 +1,15 @@
 import axios from "axios";
 import actions from "../actions";
 
-const makeSearchRequest = (urlExtension, data = {}) =>
-  axios.get("https://api.myjson.com/bins/15vnj7", data, {
+const proxy = "https://cors-anywhere.herokuapp.com/";
+
+const makeSearchRequest = term => {
+  console.log("axios:", term);
+  return axios.get(`${proxy}https://api.deezer.com/search?q=${term}`, {
     withCredentials: false
   });
+};
 
 export default {
-  getSearch: () => makeSearchRequest()
+  getSearch: term => makeSearchRequest(term)
 };
