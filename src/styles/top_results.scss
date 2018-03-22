@@ -12,8 +12,15 @@
   justify-content: center;
   align-items: flex-start;
   align-content: center;
+
   .img-result {
     lost-column: 1/4 0;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-flow: row wrap;
 
     img {
       width: 200px;
@@ -28,6 +35,14 @@
 
     .result-list-meta {
       position: relative;
+    }
+
+    .result-link {
+      text-decoration: none;
+    }
+
+    .result-link:hover {
+      opacity: 0.7;
     }
   }
 }

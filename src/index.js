@@ -25,7 +25,7 @@ ReactDOM.render(
         <div>
           <Switch>
             <Route path="/c" component={AppC} />
-            <Route path="/b" component={AppB} />
+            <Route path="/artist/:id" component={AppB} />
             <Route path="/" component={App} />
           </Switch>
         </div>

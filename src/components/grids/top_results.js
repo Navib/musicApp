@@ -8,6 +8,7 @@ import IconButton from "material-ui/IconButton";
 import MoreVertIcon from "material-ui/svg-icons/navigation/more-vert";
 import IconMenu from "material-ui/IconMenu";
 import MenuItem from "material-ui/MenuItem";
+import { Link } from "react-router-dom";
 
 const convertToMin = duration => {
   const dur = duration * 1000;
@@ -25,18 +26,31 @@ const TopResults = props => {
   return (
     <div className="search-results top-results">
       <div className="img-result">
-        <img src={props.search.data[0].artist.picture_big} />
+        <img src={props.search.data[1].artist.picture_big} />
+        <h2>{props.search.data[1].artist.name}</h2>
       </div>
       <List className="top-result-list">
         <Subheader inset={true}>Top Results</Subheader>
         {props.search.data.slice(0, 5).map(result => (
           <ListItem
             key={result.id}
-            leftAvatar={<Avatar src="images/ok-128.jpg" />}
+            leftAvatar={
+              <Avatar
+                src={result.album.cover_small}
+                size={60}
+                style={{ borderRadius: "8%", left: "6px" }}
+              />
+            }
             primaryText={result.title}
             secondaryText={
               <p className="result-list-meta">
-                <span style={{ color: darkBlack }}>{result.artist.name}</span>
+                <Link
+                  to={`/artist/${result.id}`}
+                  key={result.id}
+                  className="result-link"
+                >
+                  <span style={{ color: darkBlack }}>{result.artist.name}</span>
+                </Link>
                 <span style={{ position: "absolute", top: 0, right: 0 }}>
                   {convertToMin(result.duration)}
                 </span>
