@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import actions from "../../actions/";
+import { withRouter } from "react-router-dom";
 
 import TheComponent from "../../components/pages/app";
 
@@ -17,6 +18,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-const App = connect(mapStateToProps, mapDispatchToProps)(TheComponent);
+const App = withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(TheComponent)
+);
 
 export default App;

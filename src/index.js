@@ -15,8 +15,8 @@ import "./styles/main.scss";
 import "./assets/Rick.png";
 
 import App from "./containers/pages/app";
-import AppB from "./components/pages/app_B";
-import AppC from "./components/pages/app_C";
+import Artist from "./components/pages/artist";
+import Results from "./components/pages/results";
 
 ReactDOM.render(
   <MuiThemeProvider muiTheme={muiTheme}>
@@ -24,8 +24,8 @@ ReactDOM.render(
       <ConnectedRouter history={history}>
         <div>
           <Switch>
-            <Route path="/c" component={AppC} />
-            <Route path="/artist/:id" component={AppB} />
+            <Route path="/search/results/:query" component={Results} />
+            <Route path="/artist/:id" component={Artist} />
             <Route path="/" component={App} />
           </Switch>
         </div>

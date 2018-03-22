@@ -5,14 +5,17 @@ import DrawerDock from "../../components/drawer_dock";
 import BottomNav from "../../components/bottom_nav";
 import TopResults from "../../containers/grids/top_results";
 
-const App = props => (
+const Results = props => (
   <div id="home-page">
     <div className="drawer-dock">
       <DrawerDock history={props.history} />
     </div>
     <div className="interactive-view">
       <div className="content-bar">
-        <TopResults />
+        <TopResults
+          artistId={props.match.params.query}
+          history={props.history}
+        />
       </div>
     </div>
     <div className="bottom-nav">
@@ -21,14 +24,14 @@ const App = props => (
   </div>
 );
 
-App.propTypes = {
+Results.propTypes = {
   buttonText: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired
 };
 
-App.defaultProps = {
+Results.defaultProps = {
   buttonText: "defaultText",
   onClick: () => console.log("default click action")
 };
 
-export default App;
+export default Results;

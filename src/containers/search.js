@@ -4,7 +4,6 @@ import actions from "../actions";
 import TheComponent from "../components/search";
 
 const mapStateToProps = (state, OwnProps) => {
-  console.log("search container:", state);
   return {};
 };
 

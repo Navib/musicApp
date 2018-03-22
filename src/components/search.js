@@ -18,10 +18,10 @@ class Search extends Component {
   onFormSubmit(event) {
     event.preventDefault();
     this.props.onSubmit(this.state.term);
+    this.props.history.push(`/search/results/${this.state.term}`);
     this.setState({
       term: ""
     });
-    //this.props.history.push("/search");
   }
   render() {
     return (

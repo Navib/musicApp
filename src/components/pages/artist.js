@@ -3,21 +3,21 @@ import PropTypes from "prop-types";
 import RaisedButton from "material-ui/RaisedButton";
 import Menu from "../../containers/Menu";
 
-const AppB = props => (
+const Artist = props => (
   <div>
     <Menu />
     <RaisedButton label={props.buttonText} onClick={props.onClick} />
   </div>
 );
 
-AppB.propTypes = {
+Artist.propTypes = {
   buttonText: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired
 };
 
-AppB.defaultProps = {
+Artist.defaultProps = {
   buttonText: "defaultText",
   onClick: () => console.log("default click action")
 };
 
-export default AppB;
+export default Artist;
