@@ -9,7 +9,6 @@ import MoreVertIcon from "material-ui/svg-icons/navigation/more-vert";
 import IconMenu from "material-ui/IconMenu";
 import MenuItem from "material-ui/MenuItem";
 import { Link } from "react-router-dom";
-import { getSearch } from "../../api/search";
 
 const convertToMin = duration => {
   const dur = duration * 1000;

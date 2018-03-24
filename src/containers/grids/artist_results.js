@@ -4,7 +4,6 @@ import actions from "../../actions";
 import TheComponent from "../../components/grids/artist_results";
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("artist container: ", state);
   return { artistSearch: state.artistSearch };
 };
 

@@ -13,18 +13,30 @@
   .lost-container {
     lost-center: calc(98%);
 
-    .artist-wrapper {
+    .artist-link {
+      display: block;
+      width: 100%;
       lost-column: 1/6;
       lost-align: center;
       flex-flow: column wrap;
-
-      .artist-avatar {
-        border-radius: 50%;
+      justify-content: flex-start !important;
+      display: flex;
+      text-decoration: none;
+      .artist-wrapper {
+        .artist-avatar {
+          border-radius: 50%;
+          width: 100%;
+        }
+        .artist-name {
+          text-align: center;
+          margin: 4px auto 16px;
+          font-size: 14px;
+          color: #444;
+        }
       }
-      .artist-name {
-        text-align: center;
-        margin: 4px auto 16px;
-      }
+    }
+    .artist-link:hover {
+      opacity: 0.7;
     }
   }
 }
