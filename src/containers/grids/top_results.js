@@ -4,7 +4,10 @@ import actions from "../../actions";
 import TheComponent from "../../components/grids/top_results";
 
 const mapStateToProps = (state, ownProps) => {
-  return { search: state.search };
+  return {
+    search: state.search,
+    artistSearch: state.artistSearch
+  };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

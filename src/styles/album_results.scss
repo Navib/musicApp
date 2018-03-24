@@ -1,0 +1,59 @@
+/*
+ * Album Results styles
+*/
+.album-results .lost-container .album-link {
+  lost-column: 1/1;
+}
+@media (min-width: 400px) {
+  .album-results .lost-container .album-link {
+    lost-column: 1/2;
+  }
+}
+
+@media (min-width: 750px) {
+  .album-results .lost-container .album-link {
+    lost-column: 1/3;
+  }
+}
+
+@media (min-width: 1000px) {
+  .album-results .lost-container .album-link {
+    lost-column: 1/6;
+  }
+}
+
+.album-results {
+  width: 100%;
+
+  .section-title {
+    font-size: 2.2em;
+    text-align: center;
+  }
+
+  .lost-container {
+    lost-center: calc(98%);
+  }
+
+  .album-link {
+    display: block;
+    width: 100%;
+    lost-column: 1/6;
+    lost-align: center;
+    flex-flow: column wrap;
+    justify-content: flex-start !important;
+    display: flex;
+    text-decoration: none;
+    .album-wrapper {
+      .album-avatar {
+        width: 100%;
+      }
+      .artist-name,
+      .album-name {
+        text-align: center;
+        margin: 2px auto 4px;
+        font-size: 14px;
+        color: #444;
+      }
+    }
+  }
+}

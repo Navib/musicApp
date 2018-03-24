@@ -10,14 +10,12 @@ class ArtistResults extends Component {
     this.props.reloadArtist(this.props.artistId);
   }
   componentWillReceiveProps(nextProps, props) {
-    console.log("nextProps: ", nextProps);
     if (nextProps.artistId != this.props.artistId) {
       this.props.reloadArtist(nextProps.artistId);
     }
   }
   render() {
     if (this.props.artistSearch.data === undefined) return <div />;
-    console.log(this.props);
     return (
       <div className="search-results artist-results">
         <h3 className="section-title">Artists</h3>

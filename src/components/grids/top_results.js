@@ -29,12 +29,12 @@ class TopResults extends Component {
 
   render() {
     if (this.props.search.data === undefined) return <div>loading</div>;
-
+    console.log(this.props);
     return (
       <div className="search-results top-results">
         <div className="img-result">
-          <img src={this.props.search.data[1].artist.picture_big} />
-          <h2>{this.props.search.data[1].artist.name}</h2>
+          <img src={this.props.artistSearch.data[0].picture_xl} />
+          <h2>{this.props.artistSearch.data[0].name}</h2>
         </div>
         <List className="top-result-list">
           <Subheader inset={true}>Top Results</Subheader>

@@ -3,6 +3,7 @@ import actions from "../actions";
 import api from "../api";
 import search from "../api/search";
 import artist from "../api/artist_search";
+import album from "../api/album_search";
 
 function* getStuff() {
   console.log("Stuff");
@@ -35,10 +36,21 @@ function* getArtist(term) {
   }
 }
 
+function* getAlbum(term) {
+  try {
+    const data = yield call(album.getAlbum, term.payload);
+    yield put({ type: actions.GOT_ALBUMS, data });
+  } catch (error) {
+    console.log("saga fail: ", error);
+    yield put({ type: actions.GOT_NO_STUFF, error });
+  }
+}
+
 export function* sagas() {
   yield all([
     takeLatest(actions.GET_STUFF, getStuff),
     takeLatest(actions.GET_SEARCH, getSearch),
-    takeLatest(actions.GET_ARTIST, getArtist)
+    takeLatest(actions.GET_ARTIST, getArtist),
+    takeLatest(actions.GET_ALBUMS, getAlbum)
   ]);
 }

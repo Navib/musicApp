@@ -5,6 +5,7 @@ import DrawerDock from "../../components/drawer_dock";
 import BottomNav from "../../components/bottom_nav";
 import TopResults from "../../containers/grids/top_results";
 import ArtistResults from "../../containers/grids/artist_results";
+import AlbumResults from "../../containers/grids/album_results";
 
 const Results = props => (
   <div id="home-page">
@@ -18,6 +19,10 @@ const Results = props => (
           history={props.history}
         />
         <ArtistResults
+          artistId={props.match.params.query}
+          history={props.history}
+        />
+        <AlbumResults
           artistId={props.match.params.query}
           history={props.history}
         />

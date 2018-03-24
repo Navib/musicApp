@@ -1,12 +1,12 @@
 import actions from "../actions";
 
-const artistReducer = (state = [], action) => {
+const albumReducer = (state = [], action) => {
   switch (action.type) {
-    case actions.GOT_ARTIST:
+    case actions.GOT_ALBUMS:
       return action.data.data;
     default:
       return state;
   }
 };
 
-export default artistReducer;
+export default albumReducer;
