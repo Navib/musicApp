@@ -11,6 +11,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onSubmit: term => {
       dispatch({ type: actions.GET_SEARCH, payload: term });
+    },
+    onSubmitToStore: term => {
+      dispatch({ type: actions.GET_RECENT, payload: term });
     }
   };
 };

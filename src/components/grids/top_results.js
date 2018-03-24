@@ -26,15 +26,28 @@ class TopResults extends Component {
     if (this.props.artistId != undefined)
       this.props.reloadSearch(this.props.artistId);
   }
-
+  componentWillReceiveProps(nextProps, props) {
+    if (nextProps.artistId != this.props.artistId) {
+      this.props.reloadSearch(nextProps.artistId);
+    }
+  }
   render() {
     if (this.props.search.data === undefined) return <div>loading</div>;
-    console.log(this.props);
     return (
       <div className="search-results top-results">
         <div className="img-result">
-          <img src={this.props.artistSearch.data[0].picture_xl} />
-          <h2>{this.props.artistSearch.data[0].name}</h2>
+          <img
+            src={
+              this.props.artistSearch
+                ? this.props.artistSearch.data[0].picture_xl
+                : "http://via.placeholder.com/350x150"
+            }
+          />
+          <h2>
+            {this.props.artistSearch
+              ? this.props.artistSearch.data[0].name
+              : TEST}
+          </h2>
         </div>
         <List className="top-result-list">
           <Subheader inset={true}>Top Results</Subheader>

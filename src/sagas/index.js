@@ -46,11 +46,21 @@ function* getAlbum(term) {
   }
 }
 
+function* recentSearch(term) {
+  try {
+    yield put({ type: actions.GOT_RECENT, term });
+  } catch (error) {
+    console.log("saga fail: ", error);
+    yield put({ type: actions.GOT_NO_STUFF, error });
+  }
+}
+
 export function* sagas() {
   yield all([
     takeLatest(actions.GET_STUFF, getStuff),
     takeLatest(actions.GET_SEARCH, getSearch),
     takeLatest(actions.GET_ARTIST, getArtist),
-    takeLatest(actions.GET_ALBUMS, getAlbum)
+    takeLatest(actions.GET_ALBUMS, getAlbum),
+    takeLatest(actions.GET_RECENT, recentSearch)
   ]);
 }

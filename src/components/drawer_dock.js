@@ -3,6 +3,7 @@ import Drawer from "material-ui/Drawer";
 import MenuItem from "material-ui/MenuItem";
 import RaisedButton from "material-ui/RaisedButton";
 import Search from "../containers/search";
+import RecentSearch from "../containers/recent_search";
 
 export default class DrawerDock extends React.Component {
   constructor(props) {
@@ -17,8 +18,7 @@ export default class DrawerDock extends React.Component {
       <div>
         <Drawer open={this.state.open}>
           <Search history={this.props.history} />
-          <MenuItem>Menu Item</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
+          <RecentSearch history={this.props.history} />
         </Drawer>
       </div>
     );
