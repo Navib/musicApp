@@ -4,7 +4,6 @@ import actions from "../../actions";
 import TheComponent from "../../components/grids/top_results";
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("state: ", state);
   return { search: state.search };
 };
 

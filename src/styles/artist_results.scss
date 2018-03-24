@@ -1,0 +1,30 @@
+/*
+ * Artist Results styles
+*/
+
+.artist-results {
+  width: 100%;
+
+  .section-title {
+    font-size: 1.8em;
+    text-align: center;
+  }
+
+  .lost-container {
+    lost-center: calc(98%);
+
+    .artist-wrapper {
+      lost-column: 1/6;
+      lost-align: center;
+      flex-flow: column wrap;
+
+      .artist-avatar {
+        border-radius: 50%;
+      }
+      .artist-name {
+        text-align: center;
+        margin: 4px auto 16px;
+      }
+    }
+  }
+}

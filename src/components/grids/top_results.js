@@ -27,8 +27,8 @@ class TopResults extends Component {
     if (this.props.artistId != undefined)
       this.props.reloadSearch(this.props.artistId);
   }
+
   render() {
-    console.log("results: ", this.props);
     if (this.props.search.data === undefined) return <div>loading</div>;
 
     return (

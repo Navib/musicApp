@@ -23,7 +23,11 @@ module.exports = {
     open: true,
     port: 8080,
     compress: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": "true"
+    }
   },
   plugins: [
     new CleanWebpackPlugin(["public"]),

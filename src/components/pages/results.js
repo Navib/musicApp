@@ -4,6 +4,7 @@ import RaisedButton from "material-ui/RaisedButton";
 import DrawerDock from "../../components/drawer_dock";
 import BottomNav from "../../components/bottom_nav";
 import TopResults from "../../containers/grids/top_results";
+import ArtistResults from "../../containers/grids/artist_results";
 
 const Results = props => (
   <div id="home-page">
@@ -16,10 +17,14 @@ const Results = props => (
           artistId={props.match.params.query}
           history={props.history}
         />
+        <ArtistResults
+          artistId={props.match.params.query}
+          history={props.history}
+        />
       </div>
     </div>
     <div className="bottom-nav">
-      <BottomNav />
+      <BottomNav history={props.history} />
     </div>
   </div>
 );

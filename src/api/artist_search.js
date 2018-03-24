@@ -3,8 +3,9 @@ import actions from "../actions";
 
 const proxy = "https://cors-anywhere.herokuapp.com/";
 
-const makeSearchRequest = term => {
-  return axios.get(`${proxy}https://api.deezer.com/search/?q=${term}`, {
+const makeArtistRequest = term => {
+  console.log("artist call");
+  return axios.get(`${proxy}https://api.deezer.com/search/artist?q=${term}`, {
     withCredentials: false,
     headers: {
       "Access-Control-Allow-Origin": "*",
@@ -14,5 +15,5 @@ const makeSearchRequest = term => {
 };
 
 export default {
-  getSearch: term => makeSearchRequest(term)
+  getArtist: term => makeArtistRequest(term)
 };
