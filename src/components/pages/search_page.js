@@ -6,22 +6,25 @@ import BottomNav from "../bottom_nav";
 import Search from "../../containers/search";
 import RecentSearch from "../../containers/recent_search";
 
-const SearchPage = props => (
-  <div id="search-page">
-    <div className="drawer-dock">
-      <DrawerDock history={props.history} />
-    </div>
-    <div className="interactive-view">
-      <div className="content-bar">
-        <Search history={props.history} className="fw-input-wrapper" />
-        <RecentSearch history={props.history} id="search_page_list" />
+const SearchPage = props => {
+  console.log("Search: ", props);
+  return (
+    <div id="search-page">
+      <div className="drawer-dock">
+        <DrawerDock history={props.history} />
+      </div>
+      <div className="interactive-view">
+        <div className="content-bar">
+          <Search history={props.history} className="fw-input-wrapper" />
+          <RecentSearch history={props.history} id="search_page_list" />
+        </div>
+      </div>
+      <div className="bottom-nav">
+        <BottomNav />
       </div>
     </div>
-    <div className="bottom-nav">
-      <BottomNav />
-    </div>
-  </div>
-);
+  );
+};
 
 SearchPage.propTypes = {
   buttonText: PropTypes.string.isRequired,

@@ -23,6 +23,7 @@ class Search extends Component {
     // this.setState({
     //   term: ""
     // });
+    return false;
   }
   render() {
     return (

@@ -25,10 +25,22 @@ ReactDOM.render(
       <ConnectedRouter history={history}>
         <div>
           <Switch>
-            <Route path="/search/results/:query" component={Results} />
-            <Route path="/search/recent/" component={SearchPage} />
-            <Route path="/artist/:id" component={Artist} />
-            <Route path="/" component={App} />
+            <Route
+              path="/search/results/:query"
+              render={props => <App {...props} id="results-page" />}
+            />
+            <Route
+              path="/search/recent/"
+              render={props => <App {...props} id="search-page" />}
+            />
+            <Route
+              path="/artist/:id"
+              render={props => <App {...props} id="artist-page" />}
+            />
+            <Route
+              path="/"
+              render={props => <App {...props} id="home-page" />}
+            />
           </Switch>
         </div>
       </ConnectedRouter>

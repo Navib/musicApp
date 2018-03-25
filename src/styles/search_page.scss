@@ -41,6 +41,19 @@
 }
 
 #search-page {
+  .search-results {
+    display: none;
+  }
+}
+
+#results-page {
+  #search_page_list {
+    display: none;
+  }
+}
+
+#search-page,
+#results-page {
   position: relative;
   margin: 0;
   padding: 0;

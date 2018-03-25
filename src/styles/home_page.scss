@@ -7,6 +7,14 @@
   margin: 0;
   padding: 0;
 
+  .content-bar {
+    .search-results,
+    .recent-search-wrapper,
+    .search-field {
+      display: none;
+    }
+  }
+
   .search-field {
     display: flex;
     justify-content: center;

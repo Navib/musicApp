@@ -31,8 +31,11 @@ class TopResults extends Component {
       this.props.reloadSearch(nextProps.artistId);
     }
   }
+  nowPlaying(id) {
+    this.props.playTrack(id);
+  }
   render() {
-    if (this.props.search.data === undefined) return <div>loading</div>;
+    if (this.props.search.data === undefined) return <div />;
     return (
       <div className="search-results top-results">
         <div className="lost-container">
@@ -54,6 +57,9 @@ class TopResults extends Component {
             <Subheader inset={true}>Top Results</Subheader>
             {this.props.search.data.slice(0, 5).map(result => (
               <ListItem
+                onClick={() => {
+                  this.props.playTrack(result.id);
+                }}
                 key={result.id}
                 leftAvatar={
                   <Avatar

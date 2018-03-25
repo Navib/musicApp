@@ -7,20 +7,42 @@ import TopResults from "../../containers/grids/top_results";
 import ArtistResults from "../../containers/grids/artist_results";
 import AlbumResults from "../../containers/grids/album_results";
 import Search from "../../containers/search";
+import RecentSearch from "../../containers/recent_search";
 
-const App = props => (
-  <div id="home-page">
-    <div className="drawer-dock">
-      <DrawerDock history={props.history} />
+const App = props => {
+  return (
+    <div id={props.id}>
+      <div className="drawer-dock">
+        <DrawerDock history={props.history} />
+      </div>
+      <div className="interactive-view">
+        <div className="content-bar">
+          <Search
+            history={props.history}
+            className="fw-input-wrapper"
+            artistId={props.match.params.query}
+          />
+          <RecentSearch history={props.history} id="search_page_list" />
+          <TopResults
+            artistId={props.match.params.query}
+            history={props.history}
+          />
+          <ArtistResults
+            artistId={props.match.params.query}
+            history={props.history}
+          />
+          <AlbumResults
+            artistId={props.match.params.query}
+            history={props.history}
+          />
+        </div>
+      </div>
+      <div className="bottom-nav">
+        <BottomNav history={props.history} />
+      </div>
     </div>
-    <div className="interactive-view">
-      <div className="content-bar">Home Page</div>
-    </div>
-    <div className="bottom-nav">
-      <BottomNav history={props.history} />
-    </div>
-  </div>
-);
+  );
+};
 
 App.propTypes = {
   buttonText: PropTypes.string.isRequired,

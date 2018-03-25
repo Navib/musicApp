@@ -14,6 +14,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     reloadSearch: query => {
       dispatch({ type: actions.GET_SEARCH, payload: query });
+    },
+    playTrack: id => {
+      dispatch({ type: actions.GET_TRACK, payload: id });
     }
   };
 };

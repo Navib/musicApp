@@ -4,6 +4,7 @@ import api from "../api";
 import search from "../api/search";
 import artist from "../api/artist_search";
 import album from "../api/album_search";
+import track from "../api/get_track";
 
 function* getStuff() {
   console.log("Stuff");
@@ -55,12 +56,23 @@ function* recentSearch(term) {
   }
 }
 
+function* getTrack(id) {
+  try {
+    const data = yield call(track.getTrack, id.payload);
+    yield put({ type: actions.GOT_TRACK, data });
+  } catch (error) {
+    console.log("saga fail: ", error);
+    yield put({ type: actions.GOT_NO_STUFF, error });
+  }
+}
+
 export function* sagas() {
   yield all([
     takeLatest(actions.GET_STUFF, getStuff),
     takeLatest(actions.GET_SEARCH, getSearch),
     takeLatest(actions.GET_ARTIST, getArtist),
     takeLatest(actions.GET_ALBUMS, getAlbum),
-    takeLatest(actions.GET_RECENT, recentSearch)
+    takeLatest(actions.GET_RECENT, recentSearch),
+    takeLatest(actions.GET_TRACK, getTrack)
   ]);
 }

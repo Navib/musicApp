@@ -3,6 +3,7 @@ import searchReducer from "./search_reducer";
 import artistReducer from "./artist_reducer";
 import albumReducer from "./album_reducer";
 import recentReducer from "./recent_reducer";
+import trackReducer from "./track_reducer";
 import { routerReducer } from "react-router-redux";
 
 const rootReducer = combineReducers({
@@ -10,7 +11,8 @@ const rootReducer = combineReducers({
   search: searchReducer,
   artistSearch: artistReducer,
   albumSearch: albumReducer,
-  recentSearch: recentReducer
+  recentSearch: recentReducer,
+  currentTrack: trackReducer
 });
 
 export default rootReducer;
