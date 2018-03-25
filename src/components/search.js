@@ -33,6 +33,7 @@ class Search extends Component {
           fullWidth={true}
           underlineShow={false}
           defaultValue={this.props.artistId}
+          autoFocus="autofocus"
         />
       </form>
     );

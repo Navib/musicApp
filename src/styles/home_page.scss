@@ -77,13 +77,18 @@
   .interactive-view {
     position: fixed;
     left: 230px;
-    width: calc(100% - 230px);
+    width: calc(100% - 215px);
     margin: 0 auto;
     height: calc(100vh - 85px) !important;
     background-image: linear-gradient(to left, #e9e9e7 0%, white 100%);
+    overflow: hidden;
 
     .content-bar {
       lost-center: 100%;
+      overflow-y: scroll;
+      padding-right: 17px;
+      width: 100%;
+      height: 100%;
     }
   }
 
