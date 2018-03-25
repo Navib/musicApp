@@ -2,8 +2,8 @@ import React from "react";
 import Drawer from "material-ui/Drawer";
 import MenuItem from "material-ui/MenuItem";
 import RaisedButton from "material-ui/RaisedButton";
-import Search from "../containers/search";
 import RecentSearch from "../containers/recent_search";
+import { Link } from "react-router-dom";
 
 export default class DrawerDock extends React.Component {
   constructor(props) {
@@ -16,8 +16,12 @@ export default class DrawerDock extends React.Component {
   render() {
     return (
       <div>
-        <Drawer open={this.state.open}>
-          <Search history={this.props.history} />
+        <Drawer open={this.state.open} className="side-menu">
+          <MenuItem>
+            <Link to="/search/recent" className="goToSearch">
+              Search <i className="fa fa-search" aria-hidden="true" />
+            </Link>
+          </MenuItem>
           <RecentSearch history={this.props.history} />
         </Drawer>
       </div>

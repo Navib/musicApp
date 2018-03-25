@@ -20,18 +20,19 @@ class Search extends Component {
     this.props.onSubmit(this.state.term);
     this.props.onSubmitToStore(this.state.term);
     this.props.history.push(`/search/results/${this.state.term}`);
-    this.setState({
-      term: ""
-    });
+    // this.setState({
+    //   term: ""
+    // });
   }
   render() {
     return (
       <form className="search-field" onSubmit={this.onFormSubmit}>
         <TextField
-          hintText="ex. Logic"
-          floatingLabelText="Search"
-          value={this.state.term}
+          id="main-search"
           onChange={this.onInputChange}
+          fullWidth={true}
+          underlineShow={false}
+          defaultValue={this.props.artistId}
         />
       </form>
     );

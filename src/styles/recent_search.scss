@@ -1,0 +1,47 @@
+/*
+ * Recent List Styles
+*/
+
+.recent-search-wrapper {
+  h3 {
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+  }
+  h3:before {
+    content: "";
+    position: absolute;
+    border-bottom: 1.4px solid #444;
+    bottom: -4px;
+    height: 100%;
+    width: 90%;
+  }
+
+  .recent-list {
+    list-style-type: none;
+    padding-left: 0;
+
+    .recent-link {
+      text-decoration: none;
+      color: #444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      width: 80%;
+      margin: 0 auto;
+
+      .recent-list-item {
+        text-transform: capitalize;
+        transition: all 0.2s ease-in-out;
+        padding: 6px;
+        width: 100%;
+        margin: 4px 0;
+      }
+      .recent-list-item:hover {
+        background: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}

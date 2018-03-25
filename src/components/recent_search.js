@@ -7,16 +7,17 @@ const onlyUnique = (value, index, self) => {
 };
 
 const RecentSearch = props => {
-  console.log("recent: ", props);
   return (
-    <div className="recent-search">
-      <ul>
+    <div className="recent-search-wrapper" id={props.id}>
+      {props.recentSearch.length === 0 ? " " : <h3>Recently Searched</h3>}
+      <ul className="recent-list">
         {props.recentSearch.filter(onlyUnique).map(search => (
           <Link
             to={`/search/results/${search}`}
             key={props.recentSearch.indexOf(search)}
+            className="recent-link"
           >
-            <li>{search}</li>
+            <li className="recent-list-item">{search}</li>
           </Link>
         ))}
       </ul>

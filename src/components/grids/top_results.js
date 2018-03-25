@@ -35,53 +35,55 @@ class TopResults extends Component {
     if (this.props.search.data === undefined) return <div>loading</div>;
     return (
       <div className="search-results top-results">
-        <div className="img-result">
-          <img
-            src={
-              this.props.artistSearch
-                ? this.props.artistSearch.data[0].picture_xl
-                : "http://via.placeholder.com/350x150"
-            }
-          />
-          <h2>
-            {this.props.artistSearch
-              ? this.props.artistSearch.data[0].name
-              : TEST}
-          </h2>
-        </div>
-        <List className="top-result-list">
-          <Subheader inset={true}>Top Results</Subheader>
-          {this.props.search.data.slice(0, 5).map(result => (
-            <ListItem
-              key={result.id}
-              leftAvatar={
-                <Avatar
-                  src={result.album.cover_small}
-                  size={60}
-                  style={{ borderRadius: "8%", left: "6px" }}
-                />
+        <div className="lost-container">
+          <div className="img-result">
+            <img
+              src={
+                this.props.artistSearch
+                  ? this.props.artistSearch.data[0].picture_medium
+                  : "http://via.placeholder.com/350x150"
               }
-              primaryText={result.title}
-              secondaryText={
-                <p className="result-list-meta">
-                  <Link
-                    to={`/artist/${result.id}`}
-                    key={result.id}
-                    className="result-link"
-                  >
-                    <span style={{ color: darkBlack }}>
-                      {result.artist.name}
-                    </span>
-                  </Link>
-                  <span style={{ position: "absolute", top: 0, right: 0 }}>
-                    {convertToMin(result.duration)}
-                  </span>
-                </p>
-              }
-              secondaryTextLines={2}
             />
-          ))}
-        </List>
+            <h2>
+              {this.props.artistSearch
+                ? this.props.artistSearch.data[0].name
+                : TEST}
+            </h2>
+          </div>
+          <List className="top-result-list">
+            <Subheader inset={true}>Top Results</Subheader>
+            {this.props.search.data.slice(0, 5).map(result => (
+              <ListItem
+                key={result.id}
+                leftAvatar={
+                  <Avatar
+                    src={result.album.cover_small}
+                    size={60}
+                    style={{ borderRadius: "8%", left: "6px" }}
+                  />
+                }
+                primaryText={result.title}
+                secondaryText={
+                  <p className="result-list-meta">
+                    <Link
+                      to={`/artist/${result.id}`}
+                      key={result.id}
+                      className="result-link"
+                    >
+                      <span style={{ color: darkBlack }}>
+                        {result.artist.name}
+                      </span>
+                    </Link>
+                    <span style={{ position: "absolute", top: 0, right: 0 }}>
+                      {convertToMin(result.duration)}
+                    </span>
+                  </p>
+                }
+                secondaryTextLines={2}
+              />
+            ))}
+          </List>
+        </div>
       </div>
     );
   }

@@ -6,6 +6,7 @@ import BottomNav from "../../components/bottom_nav";
 import TopResults from "../../containers/grids/top_results";
 import ArtistResults from "../../containers/grids/artist_results";
 import AlbumResults from "../../containers/grids/album_results";
+import Search from "../../containers/search";
 
 const Results = props => (
   <div id="home-page">
@@ -14,6 +15,11 @@ const Results = props => (
     </div>
     <div className="interactive-view">
       <div className="content-bar">
+        <Search
+          history={props.history}
+          className="fw-input-wrapper"
+          artistId={props.match.params.query}
+        />
         <TopResults
           artistId={props.match.params.query}
           history={props.history}

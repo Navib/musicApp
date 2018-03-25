@@ -28,10 +28,11 @@
   .section-title {
     font-size: 2.2em;
     text-align: center;
+    margin-bottom: 0.6em;
   }
 
   .lost-container {
-    lost-center: calc(98%);
+    lost-center: calc(94%);
   }
 
   .album-link {
@@ -55,5 +56,8 @@
         color: #444;
       }
     }
+  }
+  .album-link:hover {
+    opacity: 0.7;
   }
 }

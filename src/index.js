@@ -17,6 +17,7 @@ import "./assets/Rick.png";
 import App from "./containers/pages/app";
 import Artist from "./components/pages/artist";
 import Results from "./components/pages/results";
+import SearchPage from "./components/pages/search_page";
 
 ReactDOM.render(
   <MuiThemeProvider muiTheme={muiTheme}>
@@ -25,6 +26,7 @@ ReactDOM.render(
         <div>
           <Switch>
             <Route path="/search/results/:query" component={Results} />
+            <Route path="/search/recent/" component={SearchPage} />
             <Route path="/artist/:id" component={Artist} />
             <Route path="/" component={App} />
           </Switch>
