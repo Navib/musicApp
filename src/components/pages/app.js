@@ -4,6 +4,9 @@ import RaisedButton from "material-ui/RaisedButton";
 import DrawerDock from "../../components/drawer_dock";
 import BottomNav from "../../components/bottom_nav";
 import TopResults from "../../containers/grids/top_results";
+import ArtistResults from "../../containers/grids/artist_results";
+import AlbumResults from "../../containers/grids/album_results";
+import Search from "../../containers/search";
 
 const App = props => (
   <div id="home-page">
@@ -11,12 +14,10 @@ const App = props => (
       <DrawerDock history={props.history} />
     </div>
     <div className="interactive-view">
-      <div className="content-bar">
-        <TopResults />
-      </div>
+      <div className="content-bar">Home Page</div>
     </div>
     <div className="bottom-nav">
-      <BottomNav />
+      <BottomNav history={props.history} />
     </div>
   </div>
 );
