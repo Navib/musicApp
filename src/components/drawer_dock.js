@@ -2,7 +2,7 @@ import React from "react";
 import Drawer from "material-ui/Drawer";
 import MenuItem from "material-ui/MenuItem";
 import RaisedButton from "material-ui/RaisedButton";
-import RecentSearch from "../containers/recent_search";
+import RecentPlay from "../containers/recent_play";
 import { Link } from "react-router-dom";
 
 export default class DrawerDock extends React.Component {
@@ -28,7 +28,7 @@ export default class DrawerDock extends React.Component {
               Home <i className="fa fa-home" aria-hidden="true" />
             </Link>
           </MenuItem>
-          <RecentSearch history={this.props.history} />
+          <RecentPlay history={this.props.history} />
         </Drawer>
       </div>
     );
