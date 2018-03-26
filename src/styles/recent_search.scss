@@ -38,18 +38,18 @@
       text-decoration: none;
       color: #444;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       align-content: center;
       width: 80%;
-      margin: 0 auto;
+      font-size: 1.7em;
+      text-align: left;
 
       .recent-list-item {
         text-transform: capitalize;
         transition: all 0.2s ease-in-out;
         padding: 6px;
-        width: 100%;
-        margin: 4px 0;
+        text-align: left;
       }
       .recent-list-item:hover {
         background: rgba(0, 0, 0, 0.1);

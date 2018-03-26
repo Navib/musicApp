@@ -50,7 +50,7 @@ class TopResults extends Component {
             <h2>
               {this.props.artistSearch
                 ? this.props.artistSearch.data[0].name
-                : TEST}
+                : "TEST"}
             </h2>
           </div>
           <List className="top-result-list">

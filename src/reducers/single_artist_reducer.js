@@ -1,10 +1,7 @@
 import actions from "../actions";
 
-const artistReducer = (state = [], action) => {
+const singleArtistReducer = (state = [], action) => {
   switch (action.type) {
-    case actions.GOT_ARTIST:
-      return action.data.data;
-
     case actions.GOT_SINGLE_TOP_ARTIST:
       return action.data.data;
     default:
@@ -12,4 +9,4 @@ const artistReducer = (state = [], action) => {
   }
 };
 
-export default artistReducer;
+export default singleArtistReducer;

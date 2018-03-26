@@ -13,6 +13,17 @@ const makeArtistRequest = term => {
   });
 };
 
+const makeSingleTopArtistRequest = id => {
+  return axios.get(`${proxy}https://api.deezer.com/artist/${id}/`, {
+    withCredentials: false,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": "true"
+    }
+  });
+};
+
 export default {
-  getArtist: term => makeArtistRequest(term)
+  getArtist: term => makeArtistRequest(term),
+  getSingleTopArtist: id => makeSingleTopArtistRequest(id)
 };

@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import searchReducer from "./search_reducer";
 import artistReducer from "./artist_reducer";
+import singleArtistReducer from "./single_artist_reducer";
 import albumReducer from "./album_reducer";
 import recentReducer from "./recent_reducer";
 import trackReducer from "./track_reducer";
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   albumSearch: albumReducer,
   recentSearch: recentReducer,
   currentTrack: trackReducer,
-  recentTracks: recentTrackReducer
+  recentTracks: recentTrackReducer,
+  artistPage: singleArtistReducer
 });
 
 export default rootReducer;

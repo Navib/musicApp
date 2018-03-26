@@ -8,6 +8,7 @@ import ArtistResults from "../../containers/grids/artist_results";
 import AlbumResults from "../../containers/grids/album_results";
 import Search from "../../containers/search";
 import RecentSearch from "../../containers/recent_search";
+import ArtistPage from "../../containers/pages/artist";
 
 const App = props => {
   return (
@@ -35,6 +36,7 @@ const App = props => {
             artistId={props.match.params.query}
             history={props.history}
           />
+          <ArtistPage />
         </div>
       </div>
       <div className="bottom-nav">

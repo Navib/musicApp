@@ -19,7 +19,6 @@ class AudioPlayer extends Component {
   componentDidMount() {}
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     const audio = document.getElementById("nowPlaying");
 
     if (nextProps.currentTrack.id !== this.props.currentTrack.id)

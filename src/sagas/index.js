@@ -37,6 +37,16 @@ function* getArtist(term) {
   }
 }
 
+function* getSingleTopArtist(id) {
+  try {
+    const data = yield call(artist.getSingleTopArtist, id.payload);
+    yield put({ type: actions.GOT_SINGLE_TOP_ARTIST, data });
+  } catch (error) {
+    console.log("saga fail: ", error);
+    yield put({ type: actions.GOT_NO_STUFF, error });
+  }
+}
+
 function* getAlbum(term) {
   try {
     const data = yield call(album.getAlbum, term.payload);
@@ -71,6 +81,7 @@ export function* sagas() {
     takeLatest(actions.GET_STUFF, getStuff),
     takeLatest(actions.GET_SEARCH, getSearch),
     takeLatest(actions.GET_ARTIST, getArtist),
+    takeLatest(actions.GET_SINGLE_TOP_ARTIST, getSingleTopArtist),
     takeLatest(actions.GET_ALBUMS, getAlbum),
     takeLatest(actions.GET_RECENT, recentSearch),
     takeLatest(actions.GET_TRACK, getTrack)
