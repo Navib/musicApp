@@ -3,6 +3,7 @@ import { List, ListItem } from "material-ui/List";
 import Subheader from "material-ui/Subheader";
 import { Link } from "react-router-redux";
 import { grey400, darkBlack, lightBlack } from "material-ui/styles/colors";
+import Divider from "material-ui/Divider";
 
 const onlyPlayUnique = (value, index, self) => {
   console.log(value);
@@ -20,6 +21,7 @@ const RecentPlay = props => {
         <Subheader inset={true} style={headStyle}>
           Recently Played
         </Subheader>
+        <Divider />
         {props.recentTracks
           .filter(onlyPlayUnique)
           .slice(0, 4)

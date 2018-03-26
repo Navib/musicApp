@@ -108,9 +108,10 @@
     z-index: 100;
     border-top: 1px solid #e6e6e6;
 
-    div:nth-child(1) {
+    > div:nth-child(1) {
       height: 85px !important;
-      div:nth-child(1) {
+
+      > div:nth-child(1) {
         height: 100% !important;
         display: flex;
         justify-content: center;
