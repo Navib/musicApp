@@ -45,10 +45,18 @@
   .search-results {
     display: none;
   }
+
+  .single-result {
+    display: none;
+  }
 }
 
 #results-page {
   #search_page_list {
+    display: none;
+  }
+
+  .single-result {
     display: none;
   }
 }
@@ -140,7 +148,6 @@
       lost-center: 100%;
       overflow-y: scroll;
       padding-right: 17px;
-      width: 100%;
       height: 100%;
     }
   }
