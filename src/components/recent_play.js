@@ -6,8 +6,6 @@ import { grey400, darkBlack, lightBlack } from "material-ui/styles/colors";
 import Divider from "material-ui/Divider";
 
 const onlyPlayUnique = (value, index, self) => {
-  console.log(value);
-  console.log(index);
   return self.indexOf(value) === index;
 };
 

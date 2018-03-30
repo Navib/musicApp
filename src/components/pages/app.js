@@ -36,7 +36,10 @@ const App = props => {
             artistId={props.match.params.query}
             history={props.history}
           />
-          <ArtistPage />
+          <ArtistPage
+            artistId={props.match.params.query}
+            history={props.history}
+          />
         </div>
       </div>
       <div className="bottom-nav">

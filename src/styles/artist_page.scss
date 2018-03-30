@@ -16,6 +16,31 @@
 
     .single-artist-result {
       width: 100%;
+
+      .background {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+        .center-box {
+          color: #fff;
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          flex-flow: column-reverse wrap;
+          align-items: center;
+          #name {
+            font-size: 6em;
+            margin: 0;
+          }
+          #fans {
+            font-size: 1em;
+            margin: 0;
+          }
+        }
+      }
     }
   }
 

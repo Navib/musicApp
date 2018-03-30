@@ -21,8 +21,8 @@ class ArtistPage extends Component {
     const backGround = {
       backgroundImage: `url(${this.props.artistPage.picture_xl})`,
       backgroundSize: "cover",
-      height: "100%",
-      width: "80%",
+      height: "400px",
+      width: "100%",
       margin: "0 auto",
       position: "relative"
     };
@@ -30,14 +30,18 @@ class ArtistPage extends Component {
       position: "absolute",
       width: "100%",
       height: "100%",
-      background: "rgba(0,0,0, .2)"
+      background: "rgba(255,255,255, .3)"
     };
+    const { name, nb_fan } = this.props.artistPage;
     return (
       <div className="single-result single-artist-result">
-        <div style={backGround}>
+        <div style={backGround} className="background">
           <div className="filter" style={filter} />
+          <div className="center-box">
+            <h1 id="name">{name}</h1>
+            <p id="fans">{parseInt(nb_fan * 10).toLocaleString()} Followers</p>
+          </div>
         </div>
-        {this.props.artistPage.name}
       </div>
     );
   }

@@ -42,14 +42,14 @@ class TopResults extends Component {
           <div className="img-result">
             <img
               src={
-                this.props.artistSearch
-                  ? this.props.artistSearch.data[0].picture_medium
+                this.props.search
+                  ? this.props.search.data[0].artist.picture_big
                   : "http://via.placeholder.com/350x150"
               }
             />
             <h2>
-              {this.props.artistSearch
-                ? this.props.artistSearch.data[0].name
+              {this.props.search
+                ? this.props.search.data[0].artist.name
                 : "TEST"}
             </h2>
           </div>
