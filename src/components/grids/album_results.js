@@ -2,6 +2,13 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
+const truncString = (str, max, add) => {
+  add = add || "...";
+  return typeof str === "string" && str.length > max
+    ? str.substring(0, max) + add
+    : str;
+};
+
 class AlbumResults extends Component {
   constructor(props) {
     super(props);
@@ -20,12 +27,20 @@ class AlbumResults extends Component {
       <div className="search-results album-results">
         <h3 className="section-title">Albums</h3>
         <div className="lost-container">
-          {this.props.albumSearch.data.slice(0, 12).map(album => (
-            <Link to="/" className="album-link" key={album.id}>
+          {this.props.albumSearch.data.slice(0, 18).map(album => (
+            <Link
+              to={`/album/${album.id}`}
+              className="album-link"
+              key={album.id}
+            >
               <div className="album-wrapper">
                 <img src={album.cover_medium} className="album-avatar" />
-                <p className="album-name">{album.title}</p>
-                <p className="album-name">{album.artist.name}</p>
+                <p className="album-name">
+                  {truncString(album.title, 30, "...")}
+                </p>
+                <p className="album-name">
+                  {truncString(album.artist.name, 20, "...")}
+                </p>
               </div>
             </Link>
           ))}

@@ -58,6 +58,10 @@ class App extends Component {
           />
         );
         break;
+
+      case "album-page":
+        return <h1>Albums Page</h1>;
+        break;
     }
   }
   render() {

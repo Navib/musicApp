@@ -1,0 +1,66 @@
+/*
+ * Tabs Album Results styles
+*/
+
+.artist-album-results .lost-container .album-link {
+  lost-column: 1/1;
+}
+@media (min-width: 400px) {
+  .artist-album-results .lost-container .album-link {
+    lost-column: 1/2;
+  }
+}
+
+@media (min-width: 750px) {
+  .artist-album-results .lost-container .album-link {
+    lost-column: 1/3;
+  }
+}
+
+@media (min-width: 1000px) {
+  .artist-album-results .lost-container .album-link {
+    lost-column: 1/6;
+  }
+}
+
+.artist-album-results {
+  width: 100%;
+
+  .section-title {
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 0.6em;
+  }
+
+  .lost-container {
+    lost-center: calc(94%);
+  }
+
+  .album-link {
+    display: block;
+    width: 100%;
+    lost-column: 1/6;
+    lost-align: center;
+    flex-flow: column wrap;
+    justify-content: flex-start !important;
+    display: flex;
+    text-decoration: none;
+    margin-bottom: 1em;
+
+    .album-wrapper {
+      .album-avatar {
+        max-width: 100%;
+      }
+      .artist-name,
+      .album-name {
+        text-align: center;
+        margin: 2px auto 4px;
+        font-size: 14px;
+        color: #444;
+      }
+    }
+  }
+  .album-link:hover {
+    opacity: 0.7;
+  }
+}

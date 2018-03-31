@@ -38,6 +38,10 @@ ReactDOM.render(
               render={props => <App {...props} id="artist-page" />}
             />
             <Route
+              path="/album/:id"
+              render={props => <App {...props} id="album-page" />}
+            />
+            <Route
               path="/"
               render={props => <App {...props} id="home-page" />}
             />

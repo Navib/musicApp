@@ -1,0 +1,52 @@
+/*
+ * Tabs Track Results styles
+*/
+
+@lost flexbox flex;
+
+.artist-track-results {
+  .lost-container {
+    .artist-track-result-list {
+      lost-column: 1/1 0;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .artist-track-results {
+    .lost-container {
+      .artist-track-result-list {
+        lost-column: 3/3 0;
+      }
+    }
+  }
+}
+
+.content-bar {
+  overflow: scroll;
+  height: calc(100vh - 80px);
+  width: 100%;
+}
+
+.artist-track-results {
+  width: calc(100%);
+
+  .lost-container {
+    lost-center: calc(94%);
+    margin: 0 auto;
+
+    .artist-track-result-list {
+      .result-list-meta {
+        position: relative;
+      }
+
+      .result-link {
+        text-decoration: none;
+      }
+
+      .result-link:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

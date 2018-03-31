@@ -7,7 +7,6 @@ import TabsView from "../tabs/tabs_view";
 class ArtistPage extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
   }
   componentWillMount() {
     this.props.reloadSingleTopArtist(this.props.match.params.id);
@@ -22,11 +21,12 @@ class ArtistPage extends Component {
     const backGround = {
       backgroundImage: `url(${this.props.artistPage.picture_xl})`,
       backgroundSize: "cover",
-      height: "400px",
+      backgroundAttachment: "fixed",
+      height: "calc(100vh - 94px)",
       width: "100%",
       margin: "0 auto",
-      position: "relative",
-      backgroundPosition: "0px -100px",
+      position: "absolute",
+      top: "0",
       backgroundRepeat: "no-repeat"
     };
     const filter = {
@@ -36,6 +36,7 @@ class ArtistPage extends Component {
       background: "rgba(0,0,0, .4)"
     };
     const { name, nb_fan } = this.props.artistPage;
+    console.log(this.props);
     return (
       <div className="single-result single-artist-result">
         <div style={backGround} className="background">

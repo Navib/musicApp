@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { List, ListItem } from "material-ui/List";
-import Subheader from "material-ui/Subheader";
 import Avatar from "material-ui/Avatar";
 import { grey400, darkBlack, lightBlack } from "material-ui/styles/colors";
 import IconButton from "material-ui/IconButton";
@@ -18,45 +17,30 @@ const convertToMin = duration => {
   return <span>{`${minutes}:${seconds < 10 ? "0" : ""}${seconds}`}</span>;
 };
 
-class TopResults extends Component {
+class TopTracks extends Component {
   constructor(props) {
     super(props);
   }
   componentWillMount() {
     if (this.props.artistId != undefined)
-      this.props.reloadSearch(this.props.artistId);
+      this.props.reloadTopTracks(this.props.artistId);
   }
   componentWillReceiveProps(nextProps, props) {
     if (nextProps.artistId != this.props.artistId) {
-      this.props.reloadSearch(nextProps.artistId);
+      this.props.reloadTopTracks(nextProps.artistId);
     }
   }
   nowPlaying(id) {
     this.props.playTrack(id);
   }
   render() {
-    if (this.props.search.data === undefined) return <div />;
-    console.log("fix:", this.props);
+    console.log(this.props);
+    if (this.props.artistTracks.data === undefined) return <h1>Loading..</h1>;
     return (
-      <div className="search-results top-results">
+      <div className="artist-results artist-track-results">
         <div className="lost-container">
-          <div className="img-result">
-            <img
-              src={
-                this.props.search
-                  ? this.props.search.data[0].artist.picture_big
-                  : "http://via.placeholder.com/350x150"
-              }
-            />
-            <h2>
-              {this.props.search
-                ? this.props.search.data[0].artist.name
-                : "TEST"}
-            </h2>
-          </div>
-          <List className="top-result-list">
-            <Subheader inset={true}>Top Results</Subheader>
-            {this.props.search.data.slice(0, 5).map(result => (
+          <List className="artist-track-result-list">
+            {this.props.artistTracks.data.slice(0, 5).map(result => (
               <ListItem
                 onClick={() => {
                   this.props.playTrack(result.id);
@@ -96,4 +80,4 @@ class TopResults extends Component {
   }
 }
 
-export default TopResults;
+export default TopTracks;

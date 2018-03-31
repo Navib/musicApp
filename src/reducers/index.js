@@ -7,6 +7,7 @@ import recentReducer from "./recent_reducer";
 import trackReducer from "./track_reducer";
 import recentTrackReducer from "./recent_track_reducer";
 import artistAlbumsReducer from "./artist_albums_reducer";
+import topTracksReducer from "./top_tracks_reducer";
 import { routerReducer } from "react-router-redux";
 
 const rootReducer = combineReducers({
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   currentTrack: trackReducer,
   recentTracks: recentTrackReducer,
   artistPage: singleArtistReducer,
-  artistAlbums: artistAlbumsReducer
+  artistAlbums: artistAlbumsReducer,
+  artistTracks: topTracksReducer
 });
 
 export default rootReducer;
