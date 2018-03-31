@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import RaisedButton from "material-ui/RaisedButton";
-import Menu from "../../containers/Menu";
+import Divider from "material-ui/Divider";
+import TabsView from "../tabs/tabs_view";
 
 class ArtistPage extends Component {
   constructor(props) {
@@ -17,20 +18,21 @@ class ArtistPage extends Component {
   }
   render() {
     if (this.props.artistPage === undefined) return <div>loading</div>;
-    console.log(this.props);
     const backGround = {
       backgroundImage: `url(${this.props.artistPage.picture_xl})`,
       backgroundSize: "cover",
       height: "400px",
       width: "100%",
       margin: "0 auto",
-      position: "relative"
+      position: "relative",
+      backgroundPosition: "0px -100px",
+      backgroundRepeat: "no-repeat"
     };
     const filter = {
       position: "absolute",
       width: "100%",
       height: "100%",
-      background: "rgba(255,255,255, .3)"
+      background: "rgba(0,0,0, .4)"
     };
     const { name, nb_fan } = this.props.artistPage;
     return (
@@ -39,9 +41,11 @@ class ArtistPage extends Component {
           <div className="filter" style={filter} />
           <div className="center-box">
             <h1 id="name">{name}</h1>
-            <p id="fans">{parseInt(nb_fan * 10).toLocaleString()} Followers</p>
+            <p id="fans">{parseInt(nb_fan).toLocaleString()} Followers</p>
           </div>
         </div>
+        <Divider />
+        <TabsView artistId={this.props.match.params.id} />
       </div>
     );
   }

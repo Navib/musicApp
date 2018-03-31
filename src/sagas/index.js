@@ -57,6 +57,16 @@ function* getAlbum(term) {
   }
 }
 
+function* getArtistAlbums(id) {
+  try {
+    const data = yield call(album.getArtistAlbum, id.payload);
+    yield put({ type: actions.GOT_ARTIST_ALBUMS, data });
+  } catch (error) {
+    console.log("saga fail: ", error);
+    yield put({ type: actions.GOT_NO_STUFF, error });
+  }
+}
+
 function* recentSearch(term) {
   try {
     yield put({ type: actions.GOT_RECENT, term });
@@ -83,6 +93,7 @@ export function* sagas() {
     takeLatest(actions.GET_ARTIST, getArtist),
     takeLatest(actions.GET_SINGLE_TOP_ARTIST, getSingleTopArtist),
     takeLatest(actions.GET_ALBUMS, getAlbum),
+    takeLatest(actions.GET_ARTIST_ALBUMS, getArtistAlbums),
     takeLatest(actions.GET_RECENT, recentSearch),
     takeLatest(actions.GET_TRACK, getTrack)
   ]);
