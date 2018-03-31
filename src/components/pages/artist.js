@@ -7,6 +7,7 @@ import TabsView from "../tabs/tabs_view";
 class ArtistPage extends Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
   }
   componentWillMount() {
     this.props.reloadSingleTopArtist(this.props.match.params.id);

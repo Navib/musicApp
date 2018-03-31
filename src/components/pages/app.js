@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import RaisedButton from "material-ui/RaisedButton";
 import DrawerDock from "../../components/drawer_dock";
@@ -10,53 +10,66 @@ import Search from "../../containers/search";
 import RecentSearch from "../../containers/recent_search";
 import ArtistPage from "../../containers/pages/artist";
 
-const App = props => {
-  return (
-    <div id={props.id}>
-      <div className="drawer-dock">
-        <DrawerDock history={props.history} />
-      </div>
-      <div className="interactive-view">
-        <div className="content-bar">
-          <Search
-            history={props.history}
-            className="fw-input-wrapper"
-            artistId={props.match.params.query}
-          />
-          <RecentSearch history={props.history} id="search_page_list" />
-          <TopResults
-            artistId={props.match.params.query}
-            history={props.history}
-          />
-          <ArtistResults
-            artistId={props.match.params.query}
-            history={props.history}
-          />
-          <AlbumResults
-            artistId={props.match.params.query}
-            history={props.history}
-          />
+class App extends Component {
+  renderComponent() {
+    switch (this.props.id) {
+      case "search-page":
+        return (
+          <div>
+            <Search
+              history={this.props.history}
+              className="fw-input-wrapper"
+              artistId={this.props.match.params.query}
+            />
+            <RecentSearch history={this.props.history} id="search_page_list" />
+          </div>
+        );
+        break;
+
+      case "results-page":
+        return (
+          <div>
+            <TopResults
+              artistId={this.props.match.params.query}
+              history={this.props.history}
+            />
+            <ArtistResults
+              artistId={this.props.match.params.query}
+              history={this.props.history}
+            />
+            <AlbumResults
+              artistId={this.props.match.params.query}
+              history={this.props.history}
+            />
+          </div>
+        );
+        break;
+
+      case "artist-page":
+        return (
           <ArtistPage
-            artistId={props.match.params.query}
-            history={props.history}
+            artistId={this.props.match.params.query}
+            history={this.props.history}
           />
+        );
+        break;
+    }
+  }
+  render() {
+    return (
+      <div id={this.props.id}>
+        <div className="drawer-dock">
+          <DrawerDock history={this.props.history} />
+        </div>
+        <div className="interactive-view">
+          <div className="content-bar">{this.renderComponent()}</div>
+        </div>
+        <div className="bottom-nav">
+          <BottomNav history={this.props.history} />
         </div>
       </div>
-      <div className="bottom-nav">
-        <BottomNav history={props.history} />
-      </div>
-    </div>
-  );
-};
-
-App.propTypes = {
-  buttonText: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired
-};
-
-App.defaultProps = {
-  buttonText: "defaultText",
-  onClick: () => console.log("default click action")
-};
+    );
+  }
+}
 
 export default App;
