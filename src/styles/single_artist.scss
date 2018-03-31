@@ -1,0 +1,36 @@
+.single-artist-result {
+  width: 100%;
+
+  .background {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    .center-box {
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-flow: column-reverse wrap;
+      align-items: center;
+      z-index: 99;
+      #name {
+        font-size: calc(4rem - 6px);
+        margin: 0;
+      }
+      #fans {
+        box-sizing: border-box;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 500;
+        margin: 0;
+        border: 1px solid #fff;
+        padding: 0.8em;
+        border-radius: 20px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

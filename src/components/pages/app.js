@@ -29,6 +29,11 @@ class App extends Component {
       case "results-page":
         return (
           <div>
+            <Search
+              history={this.props.history}
+              className="fw-input-wrapper"
+              artistId={this.props.match.params.query}
+            />
             <TopResults
               artistId={this.props.match.params.query}
               history={this.props.history}
@@ -57,7 +62,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div id={this.props.id}>
+      <div id={this.props.id} className="page">
         <div className="drawer-dock">
           <DrawerDock history={this.props.history} />
         </div>
