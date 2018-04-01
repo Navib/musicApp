@@ -15,9 +15,6 @@ import "./styles/main.scss";
 import "./assets/Rick.png";
 
 import App from "./containers/pages/app";
-import Artist from "./components/pages/artist";
-import Results from "./components/pages/results";
-import SearchPage from "./components/pages/search_page";
 
 ReactDOM.render(
   <MuiThemeProvider muiTheme={muiTheme}>

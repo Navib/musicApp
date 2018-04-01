@@ -9,6 +9,7 @@ import AlbumResults from "../../containers/grids/album_results";
 import Search from "../../containers/search";
 import RecentSearch from "../../containers/recent_search";
 import ArtistPage from "../../containers/pages/artist";
+import AlbumPage from "../../containers/pages/album";
 
 const width = {
   width: "100%"
@@ -64,9 +65,10 @@ class App extends Component {
 
       case "album-page":
         return (
-          <div>
-            <h1>Albums Page</h1>
-          </div>
+          <AlbumPage
+            albumId={this.props.match.params.id}
+            history={this.props.history}
+          />
         );
         break;
     }

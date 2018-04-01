@@ -14,7 +14,17 @@ const makeTrackRequest = id => {
 };
 
 const makeTopTrackRequest = id => {
-  return axios.get(`${proxy}https://api.deezer.com/artist/${id}/top?index=20`, {
+  return axios.get(`${proxy}https://api.deezer.com/artist/${id}/top?limit=50`, {
+    withCredentials: false,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": "true"
+    }
+  });
+};
+
+const makeAlbumTrackRequest = id => {
+  return axios.get(`${proxy}https://api.deezer.com/album/${id}`, {
     withCredentials: false,
     headers: {
       "Access-Control-Allow-Origin": "*",
@@ -25,5 +35,6 @@ const makeTopTrackRequest = id => {
 
 export default {
   getTrack: id => makeTrackRequest(id),
-  getTopTracks: id => makeTopTrackRequest(id)
+  getTopTracks: id => makeTopTrackRequest(id),
+  getAlbumTracks: id => makeAlbumTrackRequest(id)
 };
