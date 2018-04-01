@@ -10,12 +10,15 @@ import Search from "../../containers/search";
 import RecentSearch from "../../containers/recent_search";
 import ArtistPage from "../../containers/pages/artist";
 
+const width = {
+  width: "100%"
+};
 class App extends Component {
   renderComponent() {
     switch (this.props.id) {
       case "search-page":
         return (
-          <div>
+          <div style={width}>
             <Search
               history={this.props.history}
               className="fw-input-wrapper"
@@ -28,7 +31,7 @@ class App extends Component {
 
       case "results-page":
         return (
-          <div>
+          <div style={width}>
             <Search
               history={this.props.history}
               className="fw-input-wrapper"
@@ -60,7 +63,11 @@ class App extends Component {
         break;
 
       case "album-page":
-        return <h1>Albums Page</h1>;
+        return (
+          <div>
+            <h1>Albums Page</h1>
+          </div>
+        );
         break;
     }
   }

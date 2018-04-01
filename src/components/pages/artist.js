@@ -20,14 +20,15 @@ class ArtistPage extends Component {
     if (this.props.artistPage === undefined) return <div>loading</div>;
     const backGround = {
       backgroundImage: `url(${this.props.artistPage.picture_xl})`,
-      backgroundSize: "cover",
+      backgroundSize: "calc(100% - 215px)",
       backgroundAttachment: "fixed",
       height: "calc(100vh - 94px)",
       width: "100%",
       margin: "0 auto",
       position: "absolute",
       top: "0",
-      backgroundRepeat: "no-repeat"
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "right top"
     };
     const filter = {
       position: "absolute",
