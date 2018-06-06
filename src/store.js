@@ -15,8 +15,8 @@ let middleware = applyMiddleware(...middlewares);
 const history = createHistory();
 const store = createStore(
   reducers,
-  middleware,
   compose(
+    middleware,
     applyMiddleware(routerMiddleware(history)),
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )
